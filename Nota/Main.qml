@@ -70,4 +70,8 @@ Window {
             }
         }
     }
+
+    Component.onCompleted: {
+        Driver.printHello()
+    }
 }
