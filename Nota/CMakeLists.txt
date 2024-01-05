@@ -19,12 +19,7 @@ qt_add_executable(appNota
 qt_add_qml_module(appNota
     URI Nota
     VERSION 1.0
-	RESOURCE_PREFIX /
-	RESOURCES
-		resources/icons/logo.png
-	QML_FILES
-		Main.qml
-		resources/qml/Header.qml
+    QML_FILES Main.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
