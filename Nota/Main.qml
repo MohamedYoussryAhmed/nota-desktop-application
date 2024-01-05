@@ -3,6 +3,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtCore
 
+import "resources/qml"
+
 Window {
     id: window
 
@@ -26,13 +28,12 @@ Window {
         objectName: "windowLayout"
         anchors.fill: parent
 
-        Rectangle {
+        Header {
             id: header
 
             objectName: "header"
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height * 0.1
-            color: "#f9f7f1"
         }
 
         RowLayout {
