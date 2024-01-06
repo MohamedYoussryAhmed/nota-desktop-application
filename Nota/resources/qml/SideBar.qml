@@ -6,6 +6,7 @@ Item {
     id: root
 
     property int _margin: 20
+    property int _columnLeftMargin: 5
 
     implicitWidth: 180
     implicitHeight: 700
@@ -33,40 +34,44 @@ Item {
         anchors {
             top: logo.bottom
             left: parent.left
+            right: parent.right
             topMargin: root._margin
-            leftMargin: root._margin
+            leftMargin: root._columnLeftMargin
         }
 
-        Button {
+        VerticalBarButton {
             id: templatesBtn
 
             objectName: "templatesBtn"
+            Layout.fillWidth: true
             text: "Templates"
             icon.source: "qrc:/Nota/resources/icons/svg/duplicate.svg"
-            icon.width: 15
-            icon.height: 15
+            icon.width: 18
+            icon.height: 18
             flat: true
         }
 
-        Button {
+        VerticalBarButton {
             id: importBtn
 
             objectName: "importBtn"
+            Layout.fillWidth: true
             text: "Import"
             icon.source: "qrc:/Nota/resources/icons/svg/download.svg"
-            icon.width: 15
-            icon.height: 15
+            icon.width: 18
+            icon.height: 18
             flat: true
         }
 
-        Button {
+        VerticalBarButton {
             id: trashBtn
 
             objectName: "trashBtn"
+            Layout.fillWidth: true
             text: "Trash"
             icon.source: "qrc:/Nota/resources/icons/svg/trash.svg"
-            icon.width: 15
-            icon.height: 15
+            icon.width: 18
+            icon.height: 18
             flat: true
         }
     }
@@ -81,7 +86,6 @@ Item {
             topMargin: root._margin
         }
         text: "WORKSPACE"
-        font.family: "Ubuntu"
         color: "#808080"
     }
 
@@ -91,58 +95,64 @@ Item {
         objectName: "workspaceLayout"
         anchors {
             top: workspaceTitle.bottom
+            right: parent.right
             left: parent.left
             topMargin: root._margin
-            leftMargin: root._margin
+            leftMargin: root._columnLeftMargin
         }
 
-        Button {
-            id: templatesBtn2
+        VerticalBarButton {
+            id: tasksBtn
 
-            objectName: "templatesBtn"
-            text: "Templates"
-            icon.source: "qrc:/Nota/resources/icons/svg/duplicate.svg"
-            icon.width: 15
-            icon.height: 15
+            objectName: "tasksBtn"
+            Layout.fillWidth: true
+            text: "Tasks"
+            icon.source: "qrc:/Nota/resources/icons/svg/hashtag.svg"
+            icon.width: 18
+            icon.height: 18
             flat: true
         }
 
-        Button {
-            id: importBtn2
+        VerticalBarButton {
+            id: developmentBtn
 
-            objectName: "importBtn"
-            text: "Import"
-            icon.source: "qrc:/Nota/resources/icons/svg/download.svg"
-            icon.width: 15
-            icon.height: 15
+            objectName: "developmentBtn"
+            Layout.fillWidth: true
+            text: "Development"
+            icon.source: "qrc:/Nota/resources/icons/svg/square-terminal.svg"
+            icon.width: 18
+            icon.height: 18
             flat: true
         }
 
-        Button {
-            id: trashBtn2
+        VerticalBarButton {
+            id: achievementsBtn
 
-            objectName: "trashBtn"
-            text: "Trash"
-            icon.source: "qrc:/Nota/resources/icons/svg/trash.svg"
-            icon.width: 15
-            icon.height: 15
+            objectName: "achievementsBtn"
+            Layout.fillWidth: true
+            text: "Achievements"
+            icon.source: "qrc:/Nota/resources/icons/svg/trophy.svg"
+            icon.width: 18
+            icon.height: 18
             flat: true
         }
     }
 
-    Button {
+    VerticalBarButton {
         id: addPageBtn
 
         objectName: "addPageBtn"
         anchors {
             bottom: parent.bottom
-            horizontalCenter: parent.horizontalCenter
+            left: parent.left
+            right: parent.right
             bottomMargin: root._margin
+            leftMargin: root._columnLeftMargin
         }
         text: "New Page"
         icon.source: "qrc:/Nota/resources/icons/svg/add-solid.svg"
-        icon.width: 15
-        icon.height: 15
+        icon.width: 18
+        icon.height: 18
         flat: true
     }
 }
