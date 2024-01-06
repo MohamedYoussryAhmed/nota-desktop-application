@@ -24,8 +24,8 @@ T.Button {
             Layout.preferredWidth: _control.icon.width
             fillMode: Image.PreserveAspectFit
             source: _control.icon.source
-            sourceSize: Qt.size(_control.icon.width * 2,
-                                _control.icon.height * 2)
+            sourceSize: Qt.size(_control.icon.width * 1.5,
+                                _control.icon.height * 1.5)
         }
 
         Text {
