@@ -19,7 +19,21 @@ qt_add_executable(appNota
 qt_add_qml_module(appNota
     URI Nota
     VERSION 1.0
-    QML_FILES Main.qml
+	RESOURCE_PREFIX /
+	RESOURCES
+		resources/icons/logo.png
+		# SVG
+		resources/icons/svg/add-solid.svg
+		resources/icons/svg/download.svg
+		resources/icons/svg/duplicate.svg
+		resources/icons/svg/hashtag.svg
+		resources/icons/svg/square-terminal.svg
+		resources/icons/svg/trash.svg
+		resources/icons/svg/trophy.svg
+	QML_FILES
+		Main.qml
+		resources/qml/SideBar.qml
+		resources/qml/VerticalBarButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

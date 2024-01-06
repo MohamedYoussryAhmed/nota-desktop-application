@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QFont>
 
 #include <include/Driver.h>
 
@@ -10,6 +11,9 @@ int main(int argc, char *argv[])
 
 	app.setOrganizationDomain("ElMoaskar@gmail.com");
 	app.setOrganizationName("ElMoaskar");
+
+	QFont defaultFont("Ubuntu", 10);
+	app.setFont(defaultFont);
 
 	QQmlApplicationEngine engine;
 	QObject::connect(

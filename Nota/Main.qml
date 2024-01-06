@@ -3,6 +3,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtCore
 
+import "resources/qml"
+
 Window {
     id: window
 
@@ -26,15 +28,6 @@ Window {
         objectName: "windowLayout"
         anchors.fill: parent
 
-        Rectangle {
-            id: header
-
-            objectName: "header"
-            Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.1
-            color: "#f9f7f1"
-        }
-
         RowLayout {
             id: sectionsLayout
 
@@ -42,13 +35,12 @@ Window {
             Layout.preferredWidth: parent.width
             Layout.fillHeight: true
 
-            Rectangle {
+            SideBar {
                 id: sidebarSection
 
                 objectName: "sidebarSection"
                 Layout.preferredWidth: parent.width * 0.15
                 Layout.fillHeight: true
-                color: "#a0a6a5"
             }
 
             Rectangle {
