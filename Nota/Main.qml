@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtCore
 
-import "resources/qml"
+import Nota
 
 Window {
     id: window
@@ -22,48 +22,41 @@ Window {
         property alias height: window.height
     }
 
-    ColumnLayout {
-        id: windowLayout
+    RowLayout {
+        id: sectionsLayout
 
-        objectName: "windowLayout"
+        objectName: "sectionsLayout"
         anchors.fill: parent
 
-        RowLayout {
-            id: sectionsLayout
+        SideBar {
+            id: sidebarSection
 
-            objectName: "sectionsLayout"
-            Layout.preferredWidth: parent.width
+            objectName: "sidebarSection"
+            Layout.preferredWidth: parent.width * 0.15
             Layout.fillHeight: true
+        }
 
-            SideBar {
-                id: sidebarSection
+        Rectangle {
+            id: notesSection
 
-                objectName: "sidebarSection"
-                Layout.preferredWidth: parent.width * 0.15
-                Layout.fillHeight: true
-            }
+            objectName: "notesSection"
+            Layout.preferredWidth: parent.width * 0.35
+            Layout.fillHeight: true
+            color: "#f6761f"
+        }
 
-            Rectangle {
-                id: notesSection
+        Rectangle {
+            id: goalsSection
 
-                objectName: "notesSection"
-                Layout.preferredWidth: parent.width * 0.35
-                Layout.fillHeight: true
-                color: "#f6761f"
-            }
-
-            Rectangle {
-                id: goalsSection
-
-                objectName: "goalsSection"
-                Layout.preferredWidth: parent.width * 0.5
-                Layout.fillHeight: true
-                color: "#474e41"
-            }
+            objectName: "goalsSection"
+            Layout.preferredWidth: parent.width * 0.5
+            Layout.fillHeight: true
+            color: "#474e41"
         }
     }
 
     Component.onCompleted: {
         Driver.printHello()
+        console.info(Theme.testTxt)
     }
 }
