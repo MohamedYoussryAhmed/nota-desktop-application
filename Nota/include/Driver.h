@@ -1,6 +1,8 @@
 #pragma once
 
-#include "qobject.h"
+#include <QObject>
+#include <QSqlDatabase>
+#include <QSqlError>
 
 class Driver : public QObject
 {
@@ -9,5 +11,8 @@ class Driver : public QObject
 public:
 	explicit Driver(QObject *parent = nullptr);
 
-	Q_INVOKABLE void printHello();
+private:
+	void connectDataBase();
+
+	QSqlDatabase mDataBase;
 };
