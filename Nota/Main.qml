@@ -54,9 +54,4 @@ Window {
             color: "#474e41"
         }
     }
-
-    Component.onCompleted: {
-        Driver.printHello()
-        console.info(Theme.testTxt)
-    }
 }
