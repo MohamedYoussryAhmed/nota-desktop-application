@@ -76,3 +76,4 @@ CMakeLists.txt.user*
 # build folder
 build-Nota-Desktop_Qt_6_5_2_MSVC2019_64bit-Debug
 build-Nota-Desktop_Qt_6_5_2_MSVC2019_64bit-Release
+build-Nota-Desktop_Qt_6_6_1_MSVC2019_64bit-Release
