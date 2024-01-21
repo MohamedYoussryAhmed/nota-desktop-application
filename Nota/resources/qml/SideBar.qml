@@ -154,5 +154,7 @@ Item {
         icon.width: 18
         icon.height: 18
         flat: true
+
+        onClicked: Client.addTable("MY GOALS")
     }
 }

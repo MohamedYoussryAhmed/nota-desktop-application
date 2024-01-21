@@ -11,9 +11,11 @@ qt_standard_project_setup(REQUIRES 6.5)
 qt_add_executable(appNota
     main.cpp
 	# include files
-	include/Driver.h
+	include/Client.h
+	include/Server.h
 	# src files
-	src/Driver.cpp
+	src/Client.cpp
+	src/Server.cpp
 )
 
 # we set the property of the file to be a singleton file

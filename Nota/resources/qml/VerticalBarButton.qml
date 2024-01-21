@@ -51,5 +51,7 @@ T.Button {
     MouseArea {
         anchors.fill: parent
         cursorShape: _control.hovered ? Qt.PointingHandCursor : Qt.ArrowCursor
+
+        onClicked: _control.clicked()
     }
 }
