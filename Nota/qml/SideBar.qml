@@ -24,7 +24,7 @@ Item {
         height: 50
         sourceSize: Qt.size(width, height)
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/Nota/resources/icons/logo.png"
+        source: "qrc:/icons/logo.png"
     }
 
     ColumnLayout {
@@ -45,7 +45,7 @@ Item {
             objectName: "templatesBtn"
             Layout.fillWidth: true
             text: "Templates"
-            icon.source: "qrc:/Nota/resources/icons/svg/duplicate.svg"
+            icon.source: "qrc:/icons/svg/duplicate.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -57,7 +57,7 @@ Item {
             objectName: "importBtn"
             Layout.fillWidth: true
             text: "Import"
-            icon.source: "qrc:/Nota/resources/icons/svg/download.svg"
+            icon.source: "qrc:/icons/svg/download.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -69,7 +69,7 @@ Item {
             objectName: "trashBtn"
             Layout.fillWidth: true
             text: "Trash"
-            icon.source: "qrc:/Nota/resources/icons/svg/trash.svg"
+            icon.source: "qrc:/icons/svg/trash.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -107,7 +107,7 @@ Item {
             objectName: "tasksBtn"
             Layout.fillWidth: true
             text: "Tasks"
-            icon.source: "qrc:/Nota/resources/icons/svg/hashtag.svg"
+            icon.source: "qrc:/icons/svg/hashtag.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -119,7 +119,7 @@ Item {
             objectName: "developmentBtn"
             Layout.fillWidth: true
             text: "Development"
-            icon.source: "qrc:/Nota/resources/icons/svg/square-terminal.svg"
+            icon.source: "qrc:/icons/svg/square-terminal.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -131,7 +131,7 @@ Item {
             objectName: "achievementsBtn"
             Layout.fillWidth: true
             text: "Achievements"
-            icon.source: "qrc:/Nota/resources/icons/svg/trophy.svg"
+            icon.source: "qrc:/icons/svg/trophy.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -150,7 +150,7 @@ Item {
             leftMargin: root._columnLeftMargin
         }
         text: "New Page"
-        icon.source: "qrc:/Nota/resources/icons/svg/add-solid.svg"
+        icon.source: "qrc:/icons/svg/add-solid.svg"
         icon.width: 18
         icon.height: 18
         flat: true

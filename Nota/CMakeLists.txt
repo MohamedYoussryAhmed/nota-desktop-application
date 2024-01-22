@@ -10,38 +10,31 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appNota
     main.cpp
-	# include files
-	include/Client.h
-	include/Server.h
-	# src files
-	src/Client.cpp
-	src/Server.cpp
 )
 
 # we set the property of the file to be a singleton file
-set_source_files_properties(resources/qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_qml_module(appNota
     URI Nota
     VERSION 1.0
-	RESOURCE_PREFIX /
+	SOURCES
+		# include
+		include/Client.h
+		include/Server.h
+		# src
+		src/Client.cpp
+		src/Server.cpp
 	RESOURCES
-		resources/icons/logo.png
-		# SVG
-		resources/icons/svg/add-solid.svg
-		resources/icons/svg/download.svg
-		resources/icons/svg/duplicate.svg
-		resources/icons/svg/hashtag.svg
-		resources/icons/svg/square-terminal.svg
-		resources/icons/svg/trash.svg
-		resources/icons/svg/trophy.svg
-		resources/NotaDataBase.db
+		NotaDataBase.db
 	QML_FILES
 		Main.qml
-		resources/qml/SideBar.qml
-		resources/qml/VerticalBarButton.qml
-		resources/qml/Theme.qml
+		qml/SideBar.qml
+		qml/VerticalBarButton.qml
+		qml/Theme.qml
 )
+
+add_subdirectory(icons)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
