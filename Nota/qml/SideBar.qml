@@ -107,7 +107,7 @@ Item {
             objectName: "tasksBtn"
             Layout.fillWidth: true
             text: "Tasks"
-            icon.source: "qrc:/icons/svg/hashtag.svg"
+            icon.source: "qrc:/icons/svg/hastag.svg"
             icon.width: 18
             icon.height: 18
             flat: true
@@ -150,7 +150,7 @@ Item {
             leftMargin: root._columnLeftMargin
         }
         text: "New Page"
-        icon.source: "qrc:/icons/svg/add-solid.svg"
+        icon.source: "qrc:/icons/svg/add.svg"
         icon.width: 18
         icon.height: 18
         flat: true
