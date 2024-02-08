@@ -1,7 +1,9 @@
 qt_add_resources(appNota "icons"
 	PREFIX /icons
 	FILES
+		# PNG
 		logo.png
+		app-icon.png
 		# SVG
 		svg/0.svg
 		svg/1.svg

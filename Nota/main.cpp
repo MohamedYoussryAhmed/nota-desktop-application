@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QFont>
+#include <QIcon>
 
 #include <include/Client.h>
 
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
 
 	app.setOrganizationDomain("ElMoaskar@gmail.com");
 	app.setOrganizationName("ElMoaskar");
+	app.setWindowIcon(QIcon(":/icons/app-icon.png"));
 
 	QFont defaultFont("Ubuntu", 10);
 	app.setFont(defaultFont);
