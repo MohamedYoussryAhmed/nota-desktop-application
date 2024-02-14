@@ -36,13 +36,12 @@ Window {
             Layout.fillHeight: true
         }
 
-        Rectangle {
+        NotesPage {
             id: notesSection
 
             objectName: "notesSection"
             Layout.preferredWidth: parent.width * 0.35
             Layout.fillHeight: true
-            color: "#f6761f"
         }
 
         Rectangle {

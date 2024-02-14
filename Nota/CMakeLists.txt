@@ -29,9 +29,12 @@ qt_add_qml_module(appNota
 		NotaDataBase.db
 	QML_FILES
 		Main.qml
-		qml/SideBar.qml
-		qml/VerticalBarButton.qml
 		qml/Theme.qml
+		# Pages
+		qml/SideBar.qml
+		qml/NotesPage.qml
+		# Components
+		qml/VerticalBarButton.qml
 )
 
 add_subdirectory(icons)
