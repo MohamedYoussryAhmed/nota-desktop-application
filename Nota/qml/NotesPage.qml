@@ -32,15 +32,15 @@ Item {
                 height: parent.height * 0.8
                 width: parent.width * 0.8
                 border.width: 1
-                border.color: "#808080"
+                border.color: Theme.borderBackgroundColor
                 radius: width / 2
 
                 RowLayout {
                     anchors.centerIn: parent
 
                     Image {
-                        Layout.preferredWidth: 18
-                        Layout.preferredHeight: 18
+                        Layout.preferredWidth: Theme.mediumIconSize
+                        Layout.preferredHeight: Theme.mediumIconSize
                         source: "qrc:/icons/svg/search.svg"
                         fillMode: Image.PreserveAspectFit
                         sourceSize: Qt.size(Layout.preferredWidth * 1.5,

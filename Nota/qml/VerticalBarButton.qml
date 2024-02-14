@@ -34,7 +34,7 @@ T.Button {
             Layout.alignment: Qt.AlignVCenter
             Layout.fillWidth: true
             Layout.fillHeight: true
-            font.family: "Ubuntu"
+            font.family: Theme.primaryFontFamily
             text: _control.text
         }
     }
@@ -45,7 +45,8 @@ T.Button {
         implicitWidth: 120
         implicitHeight: 20
         radius: 5
-        color: _control.hovered ? "#EEEEEE" : "transparent"
+        color: _control.hovered ? Theme.secondaryBackgroundColor :
+                                  Theme.primaryBackgroundColor
     }
 
     MouseArea {

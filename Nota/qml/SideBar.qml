@@ -46,8 +46,8 @@ Item {
             Layout.fillWidth: true
             text: "Templates"
             icon.source: "qrc:/icons/svg/duplicate.svg"
-            icon.width: 18
-            icon.height: 18
+            icon.width: Theme.mediumIconSize
+            icon.height: Theme.mediumIconSize
             flat: true
         }
 
@@ -58,8 +58,8 @@ Item {
             Layout.fillWidth: true
             text: "Import"
             icon.source: "qrc:/icons/svg/download.svg"
-            icon.width: 18
-            icon.height: 18
+            icon.width: Theme.mediumIconSize
+            icon.height: Theme.mediumIconSize
             flat: true
         }
 
@@ -70,8 +70,8 @@ Item {
             Layout.fillWidth: true
             text: "Trash"
             icon.source: "qrc:/icons/svg/trash.svg"
-            icon.width: 18
-            icon.height: 18
+            icon.width: Theme.mediumIconSize
+            icon.height: Theme.mediumIconSize
             flat: true
         }
     }
@@ -86,7 +86,7 @@ Item {
             topMargin: root._margin
         }
         text: "WORKSPACE"
-        color: "#808080"
+        color: Theme.secondaryFontColor
     }
 
     ColumnLayout {
@@ -108,8 +108,8 @@ Item {
             Layout.fillWidth: true
             text: "Tasks"
             icon.source: "qrc:/icons/svg/hastag.svg"
-            icon.width: 18
-            icon.height: 18
+            icon.width: Theme.mediumIconSize
+            icon.height: Theme.mediumIconSize
             flat: true
         }
 
@@ -120,8 +120,8 @@ Item {
             Layout.fillWidth: true
             text: "Development"
             icon.source: "qrc:/icons/svg/square-terminal.svg"
-            icon.width: 18
-            icon.height: 18
+            icon.width: Theme.mediumIconSize
+            icon.height: Theme.mediumIconSize
             flat: true
         }
 
@@ -132,8 +132,8 @@ Item {
             Layout.fillWidth: true
             text: "Achievements"
             icon.source: "qrc:/icons/svg/trophy.svg"
-            icon.width: 18
-            icon.height: 18
+            icon.width: Theme.mediumIconSize
+            icon.height: Theme.mediumIconSize
             flat: true
         }
     }
@@ -151,8 +151,8 @@ Item {
         }
         text: "New Page"
         icon.source: "qrc:/icons/svg/add.svg"
-        icon.width: 18
-        icon.height: 18
+        icon.width: Theme.mediumIconSize
+        icon.height: Theme.mediumIconSize
         flat: true
 
         onClicked: Client.addTable("MY GOALS")
