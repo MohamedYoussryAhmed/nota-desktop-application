@@ -40,7 +40,7 @@ Window {
             id: workspaceSection
 
             objectName: "workspaceSection"
-            Layout.preferredWidth: parent.width * 0.35
+            Layout.preferredWidth: parent.width * 0.3
             Layout.fillHeight: true
         }
 
@@ -48,7 +48,7 @@ Window {
             id: goalsSection
 
             objectName: "goalsSection"
-            Layout.preferredWidth: parent.width * 0.5
+            Layout.preferredWidth: parent.width * 0.55
             Layout.fillHeight: true
             color: "#474e41"
         }
