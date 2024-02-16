@@ -32,7 +32,7 @@ qt_add_qml_module(appNota
 		qml/Theme.qml
 		# Pages
 		qml/SideBar.qml
-		qml/NotesPage.qml
+		qml/WorkspaceSection.qml
 		# Components
 		qml/VerticalBarButton.qml
 )

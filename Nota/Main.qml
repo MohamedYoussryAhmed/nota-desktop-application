@@ -36,10 +36,10 @@ Window {
             Layout.fillHeight: true
         }
 
-        NotesPage {
-            id: notesSection
+        WorkspaceSection {
+            id: workspaceSection
 
-            objectName: "notesSection"
+            objectName: "workspaceSection"
             Layout.preferredWidth: parent.width * 0.35
             Layout.fillHeight: true
         }
