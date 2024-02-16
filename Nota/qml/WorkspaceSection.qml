@@ -57,10 +57,49 @@ Item {
             }
         }
 
-        Rectangle {
+        Item {
+            id: workspaceArea
+
+            objectName: "workspaceArea"
             Layout.fillHeight: true
             Layout.fillWidth: true
-            color: "#f6761f"
+
+            Text {
+                id: workspaceTitle
+
+                objectName: "workspaceTitle"
+                topPadding: 30
+                bottomPadding: 30
+                text: "Workspace"
+                font.pixelSize: 25
+                font.bold: true
+            }
+
+            // just for test
+            ListView {
+                id: workspaceListView
+
+                objectName: "workspaceListView"
+                anchors {
+                    top: workspaceTitle.bottom
+                    bottom: parent.bottom
+                    left: parent.left
+                    right: parent.right
+                }
+                model: 15
+                clip: true
+                spacing: 10
+
+                // TODO: we should design scrollBar for our application
+                ScrollBar.vertical: ScrollBar {}
+
+                delegate: Rectangle {
+                    width: workspaceListView.width
+                    height: 150
+                    radius: 25
+                    color: Theme.secondaryBackgroundColor
+                }
+            }
         }
     }
 }
