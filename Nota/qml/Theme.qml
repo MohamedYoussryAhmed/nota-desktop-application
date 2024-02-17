@@ -5,6 +5,10 @@ import QtQuick
 QtObject {
     id: root
 
+
+    // Main
+    property color accentColor: "#F6761F"
+
     // Font
     property string primaryFontFamily: "Ubuntu"
     property color secondaryFontColor: "#808080"

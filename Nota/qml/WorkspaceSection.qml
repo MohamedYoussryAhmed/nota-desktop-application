@@ -75,7 +75,6 @@ Item {
                 font.bold: true
             }
 
-            // just for test
             ListView {
                 id: workspaceListView
 
@@ -90,11 +89,25 @@ Item {
                 clip: true
                 spacing: 10
 
-                // TODO: we should design scrollBar for our application
-                ScrollBar.vertical: ScrollBar {}
+                ScrollIndicator.vertical: ScrollIndicator {
+                    contentItem: Rectangle {
+                        implicitWidth: 5
+                        implicitHeight: 100
+                        radius: width
+                        color: Theme.accentColor
+                        opacity: parent.active ? 1 : 0
+
+                        Behavior on opacity {
+                            NumberAnimation {
+                                duration: 1000
+                                easing.type: Easing.Linear
+                            }
+                        }
+                    }
+                }
 
                 delegate: Rectangle {
-                    width: workspaceListView.width
+                    width: workspaceListView.width - 15 // margins for the scrollIndicator
                     height: 150
                     radius: 25
                     color: Theme.secondaryBackgroundColor
