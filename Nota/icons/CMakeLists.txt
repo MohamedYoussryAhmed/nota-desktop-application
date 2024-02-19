@@ -4,6 +4,8 @@ qt_add_resources(appNota "icons"
 		# PNG
 		logo.png
 		app-icon.png
+		# Illustrations
+		illustrations/study.svg
 		# SVG
 		svg/0.svg
 		svg/1.svg

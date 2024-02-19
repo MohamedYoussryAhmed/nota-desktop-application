@@ -44,13 +44,12 @@ Window {
             Layout.fillHeight: true
         }
 
-        Rectangle {
-            id: goalsSection
+        MarkdownSection {
+            id: markdownSection
 
-            objectName: "goalsSection"
-            Layout.preferredWidth: parent.width * 0.55
+            objectName: "markdownSection"
+            Layout.fillWidth: true
             Layout.fillHeight: true
-            color: "#474e41"
         }
     }
 }

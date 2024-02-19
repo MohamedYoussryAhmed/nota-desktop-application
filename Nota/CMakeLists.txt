@@ -33,6 +33,7 @@ qt_add_qml_module(appNota
 		# Pages
 		qml/SideBar.qml
 		qml/WorkspaceSection.qml
+		qml/MarkdownSection.qml
 		# Components
 		qml/VerticalBarButton.qml
 )
