@@ -5,6 +5,13 @@ qt_add_executable(playground
 qt_add_qml_module(playground
     URI Nota
     VERSION 1.0
+	RESOURCES
+		trash.svg
+		list.svg
+		h1.svg
+		h2.svg
+		h3.svg
+		h4.svg
 	QML_FILES
 		Main.qml
 )

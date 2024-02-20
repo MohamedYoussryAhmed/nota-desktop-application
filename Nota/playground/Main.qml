@@ -11,7 +11,7 @@ Window {
     minimumWidth: 500
     minimumHeight: 500
     visible: true
-    title: "Nota Application"
+    title: "Nota Playground"
 
     Settings {
         property alias x: window.x
@@ -24,15 +24,15 @@ Window {
         id: ncTextArea
 
         Rectangle {
-            id: textAreaContainer
+            id: container
 
             property alias placeholderText: _textArea.placeholderText
 
-            objectName: "textAreaContainer"
+            objectName: "container"
             implicitWidth: 200
             height: _textArea.height + 20 // top and bottom margins
             color: containerMouseArea.containsMouse || _textArea.hovered
-                   || _textControls.containsMouse ? "#f6f6f6" : "transparent"
+                   || _controls.containsMouse ? "#f6f6f6" : "transparent"
 
             MouseArea {
                 id: containerMouseArea
@@ -67,10 +67,10 @@ Window {
             }
 
             Rectangle {
-                id: _textControls
+                id: _controls
 
-                property bool containsMouse: textControlsMouseaArea.containsMouse
-                                             || i.hovered || d.hovered
+                property bool containsMouse: controlsMouseArea.containsMouse
+                                             || deleteBtn.hovered || d.hovered
                                              || f.hovered || c.hovered
 
                 anchors {
@@ -81,31 +81,33 @@ Window {
                 width: childrenRect.width
                 height: 40
                 opacity: containerMouseArea.containsMouse || _textArea.hovered
-                         || _textControls.containsMouse ? 1 : 0
+                         || _controls.containsMouse ? 1 : 0
                 border.color: "gray"
                 radius: 5
 
                 MouseArea {
-                    id: textControlsMouseaArea
+                    id: controlsMouseArea
 
                     anchors.fill: parent
                     hoverEnabled: true
                 }
 
                 RowLayout {
-                    id: controlsLayout
-
+                    layoutDirection: Qt.RightToLeft
                     anchors.verticalCenter: parent.verticalCenter
 
                     Button {
-                        id: i
-                        text: "i"
+                        id: deleteBtn
+
+                        icon.source: "qrc:/qt/qml/Nota/trash.svg"
+                        icon.width: 15
+                        icon.height: 15
                         Layout.preferredWidth: 30
                         Layout.preferredHeight: 30
-                        Layout.leftMargin: parent.spacing
+                        Layout.righMargin: parent.spacing
 
                         onClicked: {
-                            _textArea.font.pixelSize += 1
+                           container.destroy()
                         }
                     }
 
@@ -139,7 +141,7 @@ Window {
                         text: "c"
                         Layout.preferredWidth: 30
                         Layout.preferredHeight: 30
-                        Layout.rightMargin: parent.spacing
+                        Layout.leftMargin: parent.spacing
 
                         onClicked: {
                             _textArea.color = "red"
@@ -167,9 +169,9 @@ Window {
         Component.onCompleted: {
             // to create instance from ncTextArea
             ncTextArea.createObject(mainLayout, {
-                                               "placeholderText": "New TextArea ... ",
-                                               "Layout.preferredWidth": mainLayout.width
-                                           })
+                                        "placeholderText": "New TextArea ... ",
+                                        "Layout.preferredWidth": mainLayout.width
+                                    })
         }
     }
 }

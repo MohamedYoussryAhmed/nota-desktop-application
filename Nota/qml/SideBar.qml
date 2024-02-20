@@ -39,7 +39,7 @@ Item {
             leftMargin: root._columnLeftMargin
         }
 
-        VerticalBarButton {
+        NCVerticalBarButton {
             id: templatesBtn
 
             objectName: "templatesBtn"
@@ -51,7 +51,7 @@ Item {
             flat: true
         }
 
-        VerticalBarButton {
+        NCVerticalBarButton {
             id: importBtn
 
             objectName: "importBtn"
@@ -63,7 +63,7 @@ Item {
             flat: true
         }
 
-        VerticalBarButton {
+        NCVerticalBarButton {
             id: trashBtn
 
             objectName: "trashBtn"
@@ -101,7 +101,7 @@ Item {
             leftMargin: root._columnLeftMargin
         }
 
-        VerticalBarButton {
+        NCVerticalBarButton {
             id: tasksBtn
 
             objectName: "tasksBtn"
@@ -113,7 +113,7 @@ Item {
             flat: true
         }
 
-        VerticalBarButton {
+        NCVerticalBarButton {
             id: developmentBtn
 
             objectName: "developmentBtn"
@@ -125,7 +125,7 @@ Item {
             flat: true
         }
 
-        VerticalBarButton {
+        NCVerticalBarButton {
             id: achievementsBtn
 
             objectName: "achievementsBtn"
@@ -138,7 +138,7 @@ Item {
         }
     }
 
-    VerticalBarButton {
+    NCVerticalBarButton {
         id: addPageBtn
 
         objectName: "addPageBtn"

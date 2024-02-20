@@ -35,7 +35,9 @@ qt_add_qml_module(appNota
 		qml/WorkspaceSection.qml
 		qml/MarkdownSection.qml
 		# Components
-		qml/VerticalBarButton.qml
+		qml/NCVerticalBarButton.qml
+		qml/NCTextArea.qml
+		qml/NCToolButton.qml
 )
 
 add_subdirectory(icons)

@@ -52,13 +52,35 @@ Item {
             }
         }
 
-        Rectangle {
+        ScrollView {
             id: markdownScrollView
 
             objectName: "markdownScrollView"
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: Theme.secondaryBackgroundColor
+            clip: false
+
+            // JUST FOR TEST
+            ColumnLayout {
+                id: markdownLayout
+
+                objectName: "markdownLayout"
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    right: parent.right
+                    topMargin: 25
+                    leftMargin: 10
+                }
+
+                Repeater {
+                    model: 30
+
+                    NCTextArea {
+                        Layout.preferredWidth: markdownScrollView.width - 30 // scrollbar margins
+                    }
+                }
+            }
         }
     }
 }
