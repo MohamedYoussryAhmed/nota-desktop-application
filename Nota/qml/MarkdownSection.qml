@@ -60,19 +60,5 @@ Item {
             Layout.fillHeight: true
             color: Theme.secondaryBackgroundColor
         }
-
-        Item {
-            id: markdownControlArea
-
-            objectName: "markdownControlArea"
-            Layout.fillWidth: true
-            Layout.preferredHeight: 50
-
-            Rectangle {
-                color: Theme.accentColor
-                height: parent.height
-                width: parent.width
-            }
-        }
     }
 }
