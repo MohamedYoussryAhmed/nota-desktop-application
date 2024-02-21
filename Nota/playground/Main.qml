@@ -109,7 +109,7 @@ Window {
                         Layout.rightMargin: parent.spacing
 
                         onClicked: {
-                           container.destroy()
+                            container.destroy()
                         }
                     }
 
@@ -162,21 +162,29 @@ Window {
     }
 
     ScrollView {
+        id: sv
         anchors.fill: parent
+
+        contentHeight: mainLayout.height
+
+        onContentHeightChanged: {
+            console.info("height changed")
+        }
 
         Flow {
             id: mainLayout
 
             objectName: "mainLayout"
             width: parent.width
-
-            Repeater {
-                model: 30
-
-                delegate: ncTextArea
-            }
         }
     }
 
-
+    Shortcut {
+        sequence: "f"
+        onActivated: {
+            ncTextArea.createObject(mainLayout, {
+                                        "width": mainLayout.width
+                                    })
+        }
+    }
 }
