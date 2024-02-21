@@ -38,6 +38,7 @@ qt_add_qml_module(appNota
 		qml/NCVerticalBarButton.qml
 		qml/NCTextArea.qml
 		qml/NCToolButton.qml
+		qml/NCRoundButton.qml
 )
 
 add_subdirectory(icons)

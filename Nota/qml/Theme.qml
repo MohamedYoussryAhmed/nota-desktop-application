@@ -21,4 +21,11 @@ QtObject {
     // Icon
     property int smallIconSize: 15
     property int mediumIconSize: 17
+
+    // GrayShades
+    property color grayShade1: "#a2a2a2"
+    property color grayShade2: "#bfbfbf"
+    property color grayShade3: "#d3d3d3"
+    property color grayShade4: "#f0f0f0"
+
 }

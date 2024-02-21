@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Templates as T
 
-T.ToolButton {
+T.RoundButton {
     id: control
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -16,7 +16,7 @@ T.ToolButton {
     contentItem: IconLabel {
         spacing: control.spacing
         mirrored: control.mirrored
-        display: AbstractButton.IconOnly
+        display: control.display
 
         icon: control.icon
         text: control.text
@@ -24,17 +24,17 @@ T.ToolButton {
     }
 
     background: Rectangle {
-        implicitWidth: 30
-        implicitHeight: 30
+        implicitWidth: 40
+        implicitHeight: 40
+        radius: control.radius
         opacity: enabled ? 1 : 0.3
-        radius: 5
         color: {
             if (control.down)
-                return Theme.grayShade3
+                return Theme.grayShade2
             else if (control.hovered)
-                return Theme.grayShade4
+                return Theme.grayShade3
             else
-                return "transparent"
+                return Theme.grayShade4
         }
     }
 

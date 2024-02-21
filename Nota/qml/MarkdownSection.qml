@@ -58,10 +58,11 @@ Item {
             objectName: "markdownScrollView"
             Layout.fillWidth: true
             Layout.fillHeight: true
+            contentHeight: markdownLayout.height
             clip: false
 
-            // JUST FOR TEST
-            ColumnLayout {
+            // TODO: Customize the ScrollBar
+            Flow {
                 id: markdownLayout
 
                 objectName: "markdownLayout"
@@ -71,16 +72,52 @@ Item {
                     right: parent.right
                     topMargin: 25
                     leftMargin: 10
-                }
-
-                Repeater {
-                    model: 30
-
-                    NCTextArea {
-                        Layout.preferredWidth: markdownScrollView.width - 30 // scrollbar margins
-                    }
+                    rightMargin: 20
                 }
             }
         }
+
+        Rectangle {
+            id: markdownToolBar
+
+            objectName: "markdownToolBar"
+            Layout.fillWidth: true
+            Layout.preferredHeight: 80
+
+            RowLayout {
+                id: toolBarLayout
+
+                objectName: "toolBarLayout"
+                anchors {
+                    right: parent.right
+                    verticalCenter: parent.verticalCenter
+                    rightMargin: 30
+                }
+                layoutDirection: Qt.RightToLeft
+                spacing: 10
+
+                NCRoundButton {
+                    id: addTextAreaBtn
+
+                    icon.source: "qrc:/icons/svg/plus.svg"
+
+                    onClicked: {
+                        ncTextAreaComponent.createObject(markdownLayout, {
+                                                             "width": markdownLayout.width
+                                                         })
+                    }
+                }
+
+                NCRoundButton {
+                    icon.source: "qrc:/icons/svg/list.svg"
+                }
+            }
+        }
+    }
+
+    Component {
+        id: ncTextAreaComponent
+
+        NCTextArea {}
     }
 }

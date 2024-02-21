@@ -31,10 +31,8 @@ Rectangle {
             left: parent.left
             leftMargin: 10
         }
-
-        placeholderText: "TextArea ...."
-
         background: null
+        placeholderText: "TextArea ...."
 
         Keys.onReturnPressed: function (event) {
             if (event.modifiers & Qt.ControlModifier)
@@ -53,8 +51,9 @@ Rectangle {
         id: _controls
 
         property bool containsMouse: controlsMouseArea.containsMouse
-                                     || deleteBtn.hovered || d.hovered
-                                     || f.hovered || c.hovered
+                                     || deleteBtn.hovered
+                                     || underlineBtn.hovered
+                                     || italicBtn.hovered || boldBtn.hovered
 
         anchors {
             bottom: parent.top
@@ -65,7 +64,7 @@ Rectangle {
         height: 40
         opacity: containerMouseArea.containsMouse || _textArea.hovered
                  || _controls.containsMouse ? 1 : 0
-        border.color: "gray"
+        border.color: Theme.grayShade1
         radius: 5
 
         MouseArea {
@@ -82,12 +81,8 @@ Rectangle {
             NCToolButton {
                 id: deleteBtn
 
-                icon.source: "qrc:/icons/svg/trash.svg"
-                icon.width: 15
-                icon.height: 15
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
                 Layout.rightMargin: parent.spacing
+                icon.source: "qrc:/icons/svg/trash.svg"
 
                 onClicked: {
                     container.destroy()
@@ -95,47 +90,40 @@ Rectangle {
             }
 
             NCToolButton {
-                id: d
+                id: underlineBtn
 
-                text: "d"
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
+                text: "underlineBtn"
+                icon.source: checked ? "qrc:/icons/svg/underline.svg" : "qrc:/icons/svg/u.svg"
+                checkable: true
 
                 onClicked: {
-                    _textArea.font.pixelSize -= 1
+                    _textArea.font.underline = !_textArea.font.underline
                 }
             }
 
             NCToolButton {
-                id: f
+                id: italicBtn
 
-                text: "f"
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
+                text: "italicBtn"
+                icon.source: checked ? "qrc:/icons/svg/italic.svg" : "qrc:/icons/svg/i.svg"
+                checkable: true
 
                 onClicked: {
-                    _textArea.font.family = "Helvetica"
+                    _textArea.font.italic = !_textArea.font.italic
                 }
             }
 
             NCToolButton {
-                id: c
+                id: boldBtn
 
-                text: "c"
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: 30
+                text: "boldBtn"
                 Layout.leftMargin: parent.spacing
+                icon.source: checked ? "qrc:/icons/svg/bold.svg" : "qrc:/icons/svg/b.svg"
+                checkable: true
 
                 onClicked: {
-                    _textArea.color = "red"
+                    _textArea.font.bold = !_textArea.font.bold
                 }
-            }
-        }
-
-        Behavior on opacity {
-            NumberAnimation {
-                duration: 200
-                easing.type: Easing.Linear
             }
         }
     }
