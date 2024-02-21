@@ -51,7 +51,9 @@ Window {
                     leftMargin: 10
                 }
 
-                background: Item {}
+                placeholderText: "TextArea .... "
+
+                background: null
 
                 Keys.onReturnPressed: function (event) {
                     if (event.modifiers & Qt.ControlModifier)
@@ -104,7 +106,7 @@ Window {
                         icon.height: 15
                         Layout.preferredWidth: 30
                         Layout.preferredHeight: 30
-                        Layout.righMargin: parent.spacing
+                        Layout.rightMargin: parent.spacing
 
                         onClicked: {
                            container.destroy()
@@ -159,19 +161,22 @@ Window {
         }
     }
 
-    ColumnLayout {
-        id: mainLayout
+    ScrollView {
+        anchors.fill: parent
 
-        objectName: "mainLayout"
-        anchors.centerIn: parent
-        width: 300
+        Flow {
+            id: mainLayout
 
-        Component.onCompleted: {
-            // to create instance from ncTextArea
-            ncTextArea.createObject(mainLayout, {
-                                        "placeholderText": "New TextArea ... ",
-                                        "Layout.preferredWidth": mainLayout.width
-                                    })
+            objectName: "mainLayout"
+            width: parent.width
+
+            Repeater {
+                model: 30
+
+                delegate: ncTextArea
+            }
         }
     }
+
+
 }
