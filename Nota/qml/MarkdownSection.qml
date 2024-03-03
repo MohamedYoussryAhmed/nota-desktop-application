@@ -74,6 +74,12 @@ Item {
                     leftMargin: 10
                     rightMargin: 20
                 }
+
+                onWidthChanged: {
+                    // reset the width of the compnoent when change window width
+                    for (var ncComponent of children)
+                        ncComponent.width = width
+                }
             }
         }
 

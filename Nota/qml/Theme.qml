@@ -19,6 +19,7 @@ QtObject {
     property color borderBackgroundColor: "#808080"
 
     // Icon
+    property int tinyIconSize: 12
     property int smallIconSize: 15
     property int mediumIconSize: 17
 

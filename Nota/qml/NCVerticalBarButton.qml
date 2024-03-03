@@ -45,8 +45,7 @@ T.Button {
         implicitWidth: 120
         implicitHeight: 20
         radius: 5
-        color: _control.hovered ? Theme.secondaryBackgroundColor :
-                                  Theme.primaryBackgroundColor
+        color: _control.hovered ? Theme.secondaryBackgroundColor : Theme.primaryBackgroundColor
     }
 
     MouseArea {

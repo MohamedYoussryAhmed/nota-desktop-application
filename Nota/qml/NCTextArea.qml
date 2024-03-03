@@ -54,14 +54,14 @@ Rectangle {
                                      || deleteBtn.hovered
                                      || underlineBtn.hovered
                                      || italicBtn.hovered || boldBtn.hovered
-
+                                     || letterCaseBtn.hovered
         anchors {
             bottom: parent.top
             bottomMargin: -15
             right: parent.right
         }
         width: childrenRect.width
-        height: 40
+        height: 35
         opacity: containerMouseArea.containsMouse || _textArea.hovered
                  || _controls.containsMouse ? 1 : 0
         border.color: Theme.grayShade1
@@ -81,8 +81,10 @@ Rectangle {
             NCToolButton {
                 id: deleteBtn
 
+                objectName: "deleteBtn"
                 Layout.rightMargin: parent.spacing
-                icon.source: "qrc:/icons/svg/trash.svg"
+                icon.source: "qrc:/icons/svg/cross.svg"
+                icon.color: "red"
 
                 onClicked: {
                     container.destroy()
@@ -90,9 +92,25 @@ Rectangle {
             }
 
             NCToolButton {
+                id: letterCaseBtn
+
+                objectName: "letterCaseBtn"
+                icon.source: "qrc:/icons/svg/c.svg"
+                icon.color: checked ? "black" : Theme.secondaryFontColor
+                checkable: true
+
+                onClicked: {
+                    if (checked)
+                        _textArea.font.capitalization = Font.AllUppercase
+                    else
+                        _textArea.font.capitalization = Font.MixedCase
+                }
+            }
+
+            NCToolButton {
                 id: underlineBtn
 
-                text: "underlineBtn"
+                objectName: "underlineBtn"
                 icon.source: checked ? "qrc:/icons/svg/underline.svg" : "qrc:/icons/svg/u.svg"
                 checkable: true
 
@@ -104,7 +122,7 @@ Rectangle {
             NCToolButton {
                 id: italicBtn
 
-                text: "italicBtn"
+                objectName: "italicBtn"
                 icon.source: checked ? "qrc:/icons/svg/italic.svg" : "qrc:/icons/svg/i.svg"
                 checkable: true
 
@@ -116,7 +134,7 @@ Rectangle {
             NCToolButton {
                 id: boldBtn
 
-                text: "boldBtn"
+                objectName: "boldBtn"
                 Layout.leftMargin: parent.spacing
                 icon.source: checked ? "qrc:/icons/svg/bold.svg" : "qrc:/icons/svg/b.svg"
                 checkable: true
